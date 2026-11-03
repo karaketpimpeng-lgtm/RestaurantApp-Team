@@ -67,19 +67,13 @@ namespace RestaurantApp_Team
         // คน B รับผิดชอบ
         static void ShowGoodRating()
         {
-            Console.Write("กรอกชื่อร้านอาหาร: ");
-            string Name = Console.ReadLine();
-            
-            foreach (Restaurant r in restaurants)
+            Console.WriteLine("\n===== Restaurant List =====");
+
+            foreach (var r in restaurants)
             {
-                if (r.Name.Equals(Name, StringComparison.OrdinalIgnoreCase))
+                if (r.Rating >= 4.5)
                 {
-                    Console.WriteLine(
-                    r.Name + " | " +
-                    r.Type + " | " +
-                    r.Rating
-                    );
-                    
+                    Console.WriteLine($"name: {r.Name},type: {r.Type},rating: {r.Rating}");
                 }
             }
             
