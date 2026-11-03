@@ -67,7 +67,22 @@ namespace RestaurantApp_Team
         // คน B รับผิดชอบ
         static void ShowGoodRating()
         {
-            Console.WriteLine("Not completed");
+            Console.Write("กรอกชื่อร้านอาหาร: ");
+            string Name = Console.ReadLine();
+            
+            foreach (Restaurant r in restaurants)
+            {
+                if (r.Name.Equals(Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine(
+                    r.Name + " | " +
+                    r.Type + " | " +
+                    r.Rating
+                    );
+                    
+                }
+            }
+            
         }
 
         // คน C รับผิดชอบ
